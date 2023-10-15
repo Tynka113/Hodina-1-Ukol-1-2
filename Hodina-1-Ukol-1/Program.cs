@@ -1,17 +1,25 @@
 ﻿// Zadání úkol 1 + úkol 2:
 
+static void Odradkuj()
+{
+    Console.WriteLine("");
+}
+
+
+
 // Vytvoř pole typu int s těmito hodnotami {3, -4, 0, 21, 3, 16, 7, 0, 1, 3, 4,-2}. Pro kontrolu si obsah pole vypiš.
 
 int[] mojePole = { 3, -4, 0, 21, 3, 16, 7, 0, 1, 3, 4, -2 };
+Console.WriteLine("Obsah pole:");
 
-for(int i=0;i<mojePole.Length ;i++)
+for (int i=0;i<mojePole.Length ;i++)
 {
 Console.WriteLine($"{i + 1}. číslo: "+ mojePole[i]);
 
 }
 
 // Vyhledej záporná čísla a změň je na kladné číslo, zároveň vyhledej nuly a ke každé přičti hodnotu jejího indexu. Výsledné pole si vypiš.
-Console.WriteLine("");
+Odradkuj();
 Console.WriteLine("Záporná čísla nahrazená kladnými a k nulám přičetná hodnota jejich indexů:");
 for (int i = 0; i < mojePole.Length; i++)
 {
@@ -29,7 +37,7 @@ for (int i = 0; i < mojePole.Length; i++)
 }
 
 // Vyhledej největší číslo v poli a vypiš ho.
-Console.WriteLine("");
+Odradkuj();
 Console.WriteLine("Největší číslo v poli je: ");
 int poleMax = mojePole[0];
 for (int i = 0; i < mojePole.Length; i++)
@@ -43,50 +51,29 @@ for (int i = 0; i < mojePole.Length; i++)
 
 
 // Seřaď prvky v poli od nejmenšího po největší. Můžeš například využít toho, že už umíš najít největší číslo v poli. Prosím, nepoužívej už hotovou funkci na sortování, jde o to, aby sis takovou funkci zkusila napsat sama.
-Console.WriteLine("");
+Odradkuj();
 Console.WriteLine("Seřazeno: ");
-bool serazeno = false;
+
 int pomocna;
 
-while(!serazeno)
+for (int i = 0; i < mojePole.Length - 1; i++)
 {
-    serazeno = true;
-    
-
-    for(int i=0; i<mojePole.Length;i++)
+    if (mojePole[i] > mojePole[i + 1])
     {
-        if(i!=11)
-        {
-            if (mojePole[i] > mojePole[i+1])
-            {
-                serazeno = false;
-                pomocna = mojePole[i];
-                mojePole[i] = mojePole[i+1];
-                mojePole[i+1] = pomocna;
-            }
-        }
-        else
-        {
-            if (mojePole[i] < mojePole[0])
-            {
-                serazeno = false;
-                pomocna = mojePole[i];
-                mojePole[i] = mojePole[0];
-                mojePole[0] = pomocna;
-            }
-        }
-        
+        pomocna = mojePole[i];
+        mojePole[i] = mojePole[i + 1];
+        mojePole[i + 1] = pomocna;
+        i = -1;
     }
-   
-}
 
+}
 
 for (int i = 0; i < mojePole.Length; i++)
 {
     Console.WriteLine($"{i + 1}. číslo: " + mojePole[i]);
 
 }
-Console.WriteLine("");
+Odradkuj();
 
 
 //Zvol si libovolné pole délky n a najdi v něm takovou kombinaci n-1 prvků, které dávají nejnižší a nejvyšší součet. Tyto dva součty vypiš jako výsledek.
@@ -116,7 +103,7 @@ for (int i = 0; i < libovolnePole.Length; i++)
 minimalniSoucet = soucetPole - libovolnePoleMax;
 maximalniSoucet = soucetPole - libovolnePoleMin;
 
-Console.WriteLine("");
+Odradkuj(); 
 Console.WriteLine("Minimální součet: " + minimalniSoucet);
 Console.WriteLine("Maximální součet: " + maximalniSoucet);
 
@@ -141,7 +128,7 @@ for(int i=1; i<pocet;i++)
     {
         Console.Write("#");
     }
-    Console.WriteLine("");
+    Odradkuj();
 }
 
 Console.ReadLine();
